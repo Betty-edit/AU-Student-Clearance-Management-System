@@ -7,10 +7,10 @@ title Sequence Diagram for Admas University Student Clearance Management System
 actor Student as Student
 actor Registrar as Registrar
 actor Department_Head as Department_Head
-actor Academic_Dean as Academic_Dean
-actor Finance as Finance
 actor Library as Library
 actor Store as Store
+actor Finance as Finance
+actor Academic_Dean as Academic_Dean
 
 /'Sequence of events'/
 Student -> Registrar: Request clearance
@@ -21,12 +21,12 @@ transfer, etc.)
 end note
 Registrar -> Department_Head: Check Student Status
 Department_Head --> Registrar: Validate Student Status 
-Registrar -> Finance: Check Financial Clearance
-Finance --> Registrar: Validate Financial Clearance
 Registrar -> Library: Check Library Clearance
 Library --> Registrar: Validate Library Clearance
 Registrar -> Store: Check Store Clearance
 Store --> Registrar: Validate Store Clearance
+Registrar -> Finance: Check Financial Clearance
+Finance --> Registrar: Validate Financial Clearance
 Registrar -> Academic_Dean: Request Clearance Approval
 Academic_Dean --> Registrar: Approve Clearance
 Registrar -> Student: Issue Clearance Paper

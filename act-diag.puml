@@ -1,0 +1,21 @@
+@startuml
+
+title Activity Diagram for Admas University Student Clearance Management System
+
+start
+
+:Student requests clearance;
+:Student fills clearance form;
+:Registrar initiates clearance process;
+:Department Head validate student status;
+:Library validate library clearance;
+:Store validate store clearance;
+:Finance validate financial clearance;
+:Academic Dean approves clearance;
+:Registrar issues clearance paper;
+:Student receives clearance paper;
+:Student prints clearance paper;
+
+end
+
+@enduml
