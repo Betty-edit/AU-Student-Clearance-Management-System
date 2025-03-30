@@ -1,0 +1,37 @@
+@startuml seq_diagram
+
+title Sequence Diagram for Admas University Student Clearance Management System
+
+actor Student as Student
+actor Registrar as Registrar
+actor Department_Head as Department_Head
+actor Academic_Dean as Academic_Dean
+actor Finance as Finance
+actor Library as Library
+actor Store as Store
+
+Student -> Registrar: Request clearance
+note left
+Choose the purpose of 
+the clearance(e.g., graduation,
+transfer, etc.)
+end note
+Registrar -> Department_Head: Check Student Status
+Department_Head --> Registrar: Validate Student Status 
+Registrar -> Finance: Check Financial Clearance
+Finance --> Registrar: Validate Financial Clearance
+Registrar -> Library: Check Library Clearance
+Library --> Registrar: Validate Library Clearance
+Registrar -> Store: Check Store Clearance
+Store --> Registrar: Validate Store Clearance
+Registrar -> Academic_Dean: Request Clearance Approval
+Academic_Dean --> Registrar: Approve Clearance
+Registrar -> Finance: Process Payment
+Finance --> Registrar: Payment Confirmation
+Registrar -> Student: Issue Clearance Certificate
+Student -> Student: Receive/Print Clearance Certificate
+
+
+
+
+@enduml
