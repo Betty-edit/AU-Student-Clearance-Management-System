@@ -1,0 +1,10 @@
+@startuml seq_diagram
+actor Student as Student
+actor Department_Head as Department_Head
+actor Registrar as Registrar
+actor Academic_Dean as Academic_Dean
+actor Finance as Finance
+actor Library as Library
+
+
+@enduml
