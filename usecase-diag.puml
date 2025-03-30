@@ -1,6 +1,39 @@
 @startuml Use Case Diagram
+!pragma debug
 
- title Use Case Diagram for Admas University Student Clearance Management System
+title Use Case Diagram for Admas University Student Clearance Management System
+
+
+Student as Student
+Registrar as Registrar
+Department_Head as Department_Head
+Academic_Dean as Academic_Dean
+Finance as Finance
+Library as Library
+Store as Store
+
+package AUSCMS {
+    usecase "Request Clearance" as Stu1
+    usecase "Initiate Clearance Process" as Reg1
+    usecase "Validate Student Status" as Dept1
+    usecase "Validate Financial Clearance" as Fin1
+    usecase "Validate Library Clearance" as Lib1
+    usecase "Validate Store Clearance" as Store1
+    usecase "Approve Clearance" as Acad1
+    usecase "Issue Clearance Paper" as Reg2
+    usecase "Print Clearance Paper" as Stu2
+}
+
+left to right direction
+Student --> Stu1 : Fill Clearance Form
+Registrar --> Reg1: View & Check Student Record
+Department_Head --> Dept1: Check Student Status(e.g., is student here?, is student graduated?, etc.)
+Registrar --> Reg2
+Student --> Stu2: Receive Clearance Paper
+Finance --> Fin1: Check Financial Clearance(e.g., penalities, tuition fees, etc.)
+Library --> Lib1: Check Library Clearance(e.g., unreturned books, penalities, etc.)
+Store --> Store1: Check Store Clearance(e.g., unreturned gowns, etc.)
+Academic_Dean --> Acad1
 
 
 @enduml

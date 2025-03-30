@@ -29,10 +29,8 @@ Registrar -> Store: Check Store Clearance
 Store --> Registrar: Validate Store Clearance
 Registrar -> Academic_Dean: Request Clearance Approval
 Academic_Dean --> Registrar: Approve Clearance
-Registrar -> Finance: Process Payment
-Finance --> Registrar: Payment Confirmation
-Registrar -> Student: Issue Clearance Certificate
-Student -> Student: Receive/Print Clearance Certificate
+Registrar -> Student: Issue Clearance Paper
+Student -> Student: Receive/Print Clearance Paper
 
 
 
