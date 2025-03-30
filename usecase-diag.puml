@@ -1,9 +1,10 @@
 @startuml Use Case Diagram
 !pragma debug
 
+/'Title of the diagram'/
 title Use Case Diagram for Admas University Student Clearance Management System
 
-
+/'Participants Of the System'/
 Student as Student
 Registrar as Registrar
 Department_Head as Department_Head
@@ -12,6 +13,7 @@ Finance as Finance
 Library as Library
 Store as Store
 
+/'System'/
 package AUSCMS {
     usecase "Request Clearance" as Stu1
     usecase "Initiate Clearance Process" as Reg1
@@ -24,6 +26,7 @@ package AUSCMS {
     usecase "Print Clearance Paper" as Stu2
 }
 
+/'System Boundary'/
 left to right direction
 Student --> Stu1 : Fill Clearance Form
 Registrar --> Reg1: View & Check Student Record
