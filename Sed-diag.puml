@@ -13,26 +13,39 @@ actor Finance as Finance
 actor Academic_Dean as Academic_Dean
 
 /'Sequence of events'/
+activate Student
 Student -> Registrar: Request clearance
 note left
 Choose the purpose of 
 the clearance(e.g., graduation,
 transfer, etc.)
 end note
+activate Registrar
+activate Department_Head
 Registrar -> Department_Head: Check Student Status
 Department_Head --> Registrar: Validate Student Status 
+deactivate Department_Head
+activate Library
 Registrar -> Library: Check Library Clearance
 Library --> Registrar: Validate Library Clearance
+deactivate Library
+activate Store
 Registrar -> Store: Check Store Clearance
 Store --> Registrar: Validate Store Clearance
+deactivate Store
+activate Finance
 Registrar -> Finance: Check Financial Clearance
 Finance --> Registrar: Validate Financial Clearance
+deactivate Finance
+activate Academic_Dean
 Registrar -> Academic_Dean: Request Clearance Approval
 Academic_Dean --> Registrar: Approve Clearance
+deactivate Academic_Dean
 Registrar -> Student: Issue Clearance Paper
+deactivate Registrar
 Student -> Student: Receive/Print Clearance Paper
 
-
+deactivate Student
 
 
 @enduml
