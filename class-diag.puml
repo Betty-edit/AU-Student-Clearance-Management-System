@@ -46,10 +46,10 @@ class Store {
     +name: String
     +checkStoreClearance(): void
 }
-Student  --> Registrar
-Student  --> Library
-Student --> Finance
-Student --> Store
-Student --> DepartmentHead 
-Registrar -->AcademicDean
+Student "1" -- "1" Registrar : > Requests clearance
+Student "1" --"1" Library : < Validate Library Clearance
+Student "1" -- "1" Finance: < Validate Financial Clearance
+Student "1" -- "1" Store : < Validate Store Clearance
+Registrar "1" -- "1" DepartmentHead : < Check Student Status
+Registrar "1" -- "1" AcademicDean: < Clearance Approval
 @enduml
