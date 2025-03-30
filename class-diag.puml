@@ -1,0 +1,55 @@
+@startuml
+
+title Class Diagram for Admas University Student Clearance Management System
+
+class Student {
+    +studentID: String
+    +name: String
+    +department: String
+    +requestClearance(): void
+    +receiveClearancePaper(): void
+}
+
+class Registrar {
+    +registrarID: String
+    +name: String
+    +verifyStudentRecord(): void
+    +issueClearancePaper(): void
+}
+
+class DepartmentHead {
+    +headID: String
+    +name: String
+    +validateStudentStatus(): void
+}
+
+class AcademicDean {
+    +deanID: String
+    +name: String
+    +approveClearance(): void
+}
+
+class Finance {
+    +financeID: String
+    +name: String
+    +checkFinancialClearance(): void
+}
+
+class Library {
+    +libraryID: String
+    +name: String
+    +checkLibraryClearance(): void
+}
+
+class Store {
+    +storeID: String
+    +name: String
+    +checkStoreClearance(): void
+}
+Student  --> Registrar
+Student  --> Library
+Student --> Finance
+Student --> Store
+Student --> DepartmentHead 
+Registrar -->AcademicDean
+@enduml
