@@ -1,7 +1,9 @@
 @startuml seq_diagram
 
+/'Title of the diagram'/
 title Sequence Diagram for Admas University Student Clearance Management System
 
+/'Participants Of the System'/
 actor Student as Student
 actor Registrar as Registrar
 actor Department_Head as Department_Head
@@ -10,6 +12,7 @@ actor Finance as Finance
 actor Library as Library
 actor Store as Store
 
+/'Sequence of events'/
 Student -> Registrar: Request clearance
 note left
 Choose the purpose of 

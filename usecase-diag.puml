@@ -1,3 +1,6 @@
-@startuml
+@startuml Use Case Diagram
+
+ title Use Case Diagram for Admas University Student Clearance Management System
+
 
 @enduml
